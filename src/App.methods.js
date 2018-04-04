@@ -35,7 +35,7 @@ export default {
       let preChar = this.currentMarkdown[i - 1];
       preChar === "\n" &&
         this.$refs.styleEditor &&
-        this.$nextTick(() => this.$refs.resumeEditor.goBottom());
+        this.$nextTick(() => this.$refs.resumeEditor.goBottom());  //  nextTick 确保 dom 更新完毕(即字符换行后高度增加)
       await this.sleep(this.interval);
     }
   }
